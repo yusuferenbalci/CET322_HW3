@@ -1,0 +1,13 @@
+@model CetStudent.Models.Vehicle
+
+<form asp-action="Create">
+    <!-- Other vehicle registration fields -->
+    <div class="form-group">
+        <label asp-for="BrandId" class="control-label">Brand</label>
+        <select asp-for="BrandId" class="form-control" asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name"))">
+            <option value="">Select Brand</option>
+        </select>
+        <span asp-validation-for="BrandId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Register Vehicle</button>
+</form>
